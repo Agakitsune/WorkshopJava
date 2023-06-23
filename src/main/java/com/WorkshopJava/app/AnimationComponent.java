@@ -17,7 +17,7 @@ public class AnimationComponent extends Component {
     private AnimationChannel animWalk;
     public AnimationComponent(String file, int frames, int width, int height, float speed) {
         animIdle = new AnimationChannel(FXGL.image(file), frames, width, height, Duration.seconds(speed), 0, 3);
-        animWalk = new AnimationChannel(FXGL.image(file), frames, width, height, Duration.seconds(speed), 0, 3);
+        animWalk = new AnimationChannel(FXGL.image(file), frames, width, height, Duration.seconds(speed), 4, 7);
 
         texture = new AnimatedTexture(animIdle);
         texture.loopAnimationChannel(animIdle);
@@ -31,21 +31,19 @@ public class AnimationComponent extends Component {
     @Override
     public void onUpdate(double tpf) {
         if (speed != 0) {
-            texture.loopAnimationChannel(animWalk);
+            speed = 0;
+            if (texture.getAnimationChannel() != animWalk) {
+                texture.loopAnimationChannel(animWalk);
+            }
         } else {
-            texture.loopAnimationChannel(animIdle);
+            if (texture.getAnimationChannel() != animIdle) {
+                texture.loopAnimationChannel(animIdle);
+            }
         }
     }
 
-    public void moveRight() {
+    public void move() {
         speed = 1;
-
-        //getEntity().setScaleX(1);
     }
 
-    public void moveLeft() {
-        speed = -1;
-
-        //getEntity().setScaleX(-1);
-    }
 }

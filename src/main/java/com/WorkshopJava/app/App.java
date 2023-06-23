@@ -45,7 +45,7 @@ public class App extends GameApplication {
                 Point2D pos = player.getPosition();
                 pos = pos.add(0, -1);
                 player.setPosition(pos);
-                player.getComponent()
+                player.getComponent(AnimationComponent.class).move();
             }
 
             @Override
@@ -53,6 +53,7 @@ public class App extends GameApplication {
                 Point2D pos = player.getPosition();
                 pos = pos.add(0, -1);
                 player.setPosition(pos);
+                player.getComponent(AnimationComponent.class).move();
             }
         };
 
@@ -62,6 +63,7 @@ public class App extends GameApplication {
                 Point2D pos = player.getPosition();
                 pos = pos.add(-1, 0);
                 player.setPosition(pos);
+                player.getComponent(AnimationComponent.class).move();
             }
 
             @Override
@@ -69,6 +71,7 @@ public class App extends GameApplication {
                 Point2D pos = player.getPosition();
                 pos = pos.add(-1, 0);
                 player.setPosition(pos);
+                player.getComponent(AnimationComponent.class).move();
             }
         };
 
@@ -78,6 +81,7 @@ public class App extends GameApplication {
                 Point2D pos = player.getPosition();
                 pos = pos.add(1, 0);
                 player.setPosition(pos);
+                player.getComponent(AnimationComponent.class).move();
             }
 
             @Override
@@ -85,6 +89,7 @@ public class App extends GameApplication {
                 Point2D pos = player.getPosition();
                 pos = pos.add(0, -1);
                 player.setPosition(pos);
+                player.getComponent(AnimationComponent.class).move();
             }
         };
 
@@ -94,6 +99,7 @@ public class App extends GameApplication {
                 Point2D pos = player.getPosition();
                 pos = pos.add(0, 1);
                 player.setPosition(pos);
+                player.getComponent(AnimationComponent.class).move();
             }
 
             @Override
@@ -101,6 +107,7 @@ public class App extends GameApplication {
                 Point2D pos = player.getPosition();
                 pos = pos.add(0, 1);
                 player.setPosition(pos);
+                player.getComponent(AnimationComponent.class).move();
             }
         };
     }
